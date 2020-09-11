@@ -19,6 +19,15 @@
   flex-flow: column nowrap;
   justify-content: center;
   flex: 1;
+  padding: 30px;
+}
+
+.img {
+  align-items: flex-end;
+  > img {
+    max-height: 600px;
+    width: 80%;
+  }
 }
 
 .title {

@@ -7,7 +7,7 @@ export default function Cover() {
         <>
             <div className={styles.container}>
                 <div className={styles.img}>
-                    <img src='../vercel.svg' />
+                    <img src='../cock-tail.png' />
                 </div>
                 <div className={styles.content}>
                     <h1 className={styles.title}>The Cock Tail</h1>
