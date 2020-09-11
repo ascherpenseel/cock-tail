@@ -1,8 +1,8 @@
 import styles from '../styles/Keyboard.module.scss'
 import Link from 'next/link'
 
-const Letter = (char, selected) => (
-    <Link key={char} scroll={false} href={`/list/${char}`}>
+const Letter = ({char, selected}) => (
+    <Link scroll={false} href={`/list/${char}`}>
         <a className={`${styles.letter} ${char === selected ? styles.selected : ''}`}>
             {char}
         </a>
@@ -14,17 +14,17 @@ export default function Keyboard({ letter }) {
         <div className={styles.container}>
             <div className={styles.row}>
                 {
-                    'qwertyuiop'.split('').map(char => Letter(char, letter))
+                    'qwertyuiop'.split('').map(char => <Letter key={char} char={char} selected={letter}/>)
                 }
             </div>
             <div className={styles.row}>
                 {
-                    'asdfghjkl'.split('').map(char => Letter(char, letter))
+                    'asdfghjkl'.split('').map(char => <Letter key={char} char={char} selected={letter}/>)
                 }
             </div>
             <div className={styles.row}>
                 {
-                    'zxcvbnm'.split('').map(char => Letter(char, letter))
+                    'zxcvbnm'.split('').map(char => <Letter key={char} char={char} selected={letter}/>)
                 }
             </div>
         </div>

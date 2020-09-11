@@ -11,7 +11,7 @@ export default function ListByIngredient() {
     const { ingredient } = router.query
 
     useEffect(() => {
-        window.scroll(0,window.innerHeight)
+        window.scroll(0, window.innerHeight === window.scrollY ? window.innerHeight - 1 : window.innerHeight)
     },[]) 
 
     return (

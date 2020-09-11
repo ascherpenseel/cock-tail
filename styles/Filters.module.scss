@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.alcoholFree {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+}
+
+.filterIcon {
+    position: relative;
+    top: 7px;
+    height: 65px;
+    
+    img {
+        height: 40px;
+        transition: all .3s ease;
+    }
+}
+
+.listWrapper {
+    position: absolute;
+    opacity: 0;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+    padding: 0px;
+    background-color: $theme-color-dark;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.list {
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ingredient {
+    font-size: $font-sm;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: $font-md;
+    margin: 2px;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    &:hover {
+        background-color: $theme-color;
+    }
+}
+
+.filterIcon:hover + .listWrapper, .listWrapper:hover {
+    opacity: 1;
+    max-height: 100vh;
+}
+
+.container:hover .alcoholFree:not(:hover) + .filterIcon > img {
+    transform: rotate(180deg);
+}

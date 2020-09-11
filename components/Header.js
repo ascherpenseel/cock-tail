@@ -1,6 +1,8 @@
 import styles from '../styles/Header.module.scss'
 import { useEffect, useState } from 'react'
 import Search from './Search'
+import Filters from './Filters'
+import Link from 'next/link'
 
 export default function Header() {
 
@@ -23,8 +25,12 @@ export default function Header() {
 
     return (
         <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
-            <div>filters</div>
-            <h1 className={`${styles.logo} font-script`}>The Cock Tail</h1>
+            <Filters />
+            <h1 className={`${styles.logo} font-script`}>
+                <Link scroll={false} href='/'>
+                    <a>The Cock Tail</a>
+                </Link>
+            </h1>
             <Search mini />
         </div>
     )
