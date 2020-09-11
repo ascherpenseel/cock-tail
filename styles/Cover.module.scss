@@ -1,7 +1,4 @@
-.fontDelafield {
-  font-family: "Mrs Saint Delafield", cursive;
-  font-weight: 100;
-}
+@import "./variables.scss";
 
 .container {
   display: flex;
@@ -11,6 +8,7 @@
   padding: 30px;
   width: 100%;
   min-height: 100vh;
+  background-color: $theme-color-dark;
 }
 
 .content,
@@ -31,7 +29,6 @@
 }
 
 .title {
-  @extend .fontDelafield;
   font-size: 96px;
   line-height: 90px;
   margin: 0;

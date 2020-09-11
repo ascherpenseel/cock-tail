@@ -8,7 +8,7 @@ export default function Header() {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= window.innerHeight) {
+            if (window.scrollY >= window.innerHeight - 100) {
                 setShow(true)
             } else {
                 setShow(false)
@@ -19,7 +19,7 @@ export default function Header() {
     return (
         <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
             <div>filters</div>
-            <h1 className={styles.logo}>The Cock Tail</h1>
+            <h1 className={`${styles.logo} font-script`}>The Cock Tail</h1>
             <Search mini />
         </div>
     )

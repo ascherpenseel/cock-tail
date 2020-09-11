@@ -24,7 +24,16 @@ p {
   white-space: pre-line;
 }
 
+.font-script {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 100;
+}
+
 .text-md {
   font-size: $font-md;
   line-height: calc(#{$font-md} * 1.5);
+}
+
+.underlined {
+  text-decoration: underline;
 }

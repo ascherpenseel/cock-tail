@@ -1,0 +1,39 @@
+@import "./variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  display: block;
+  font-size: $font-md;
+  text-transform: uppercase;
+  border: 0px;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: $theme-color;
+  margin: 3px;
+  padding: 2px;
+  box-sizing: content-box;
+
+  &:hover,
+  &.selected {
+    background-color: $theme-color-dark;
+    color: black;
+  }
+}
