@@ -1,0 +1,60 @@
+@import "../styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 30px;
+
+  &.mini {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+}
+
+.input,
+.button {
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid black;
+  outline: none;
+  font-size: $font-md;
+
+  .mini & {
+    font-size: $font-sm;
+    height: 40px;
+  }
+}
+
+.input {
+  width: 300px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  background-color: transparent;
+
+  .mini & {
+    width: 150px;
+    margin-right: 5px;
+  }
+}
+
+.button {
+  width: 80px;
+  background-color: black;
+  color: $theme-color;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+
+  .mini & {
+    width: 50px;
+  }
+
+  &:hover {
+    background-color: $theme-color-dark;
+    border-color: $theme-color-dark;
+    color: black;
+  }
+  &:active {
+    top: 2px;
+  }
+}

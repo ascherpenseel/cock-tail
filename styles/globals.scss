@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
-
-$color-bg: #ecffc2;
-$font-md: 21px;
+@import "./variables.scss";
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Roboto, Helvetica Neue, sans-serif;
-  background-color: $color-bg;
+  background-color: $theme-color;
 }
 
 a {
