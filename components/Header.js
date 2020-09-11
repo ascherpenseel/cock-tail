@@ -6,14 +6,19 @@ export default function Header() {
 
     const [show, setShow] = useState(false)
 
+    const toggle = () => {
+        if (window.scrollY >= window.innerHeight - 100) {
+            setShow(true)
+        } else {
+            setShow(false)
+        }
+    }
+
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= window.innerHeight - 100) {
-                setShow(true)
-            } else {
-                setShow(false)
-            }
-        })
+        window.addEventListener('scroll', toggle)
+        return () => {
+            window.removeEventListener('scroll', toggle)
+        }
     }, [])
 
     return (

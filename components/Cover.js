@@ -1,6 +1,5 @@
 import styles from '../styles/Cover.module.scss'
 import Search from './Search'
-import Header from './Header'
 
 export default function Cover() {
     return (
@@ -17,7 +16,6 @@ export default function Cover() {
                     <Search />
                 </div>
             </div>
-            <Header />
         </>
     )
 }

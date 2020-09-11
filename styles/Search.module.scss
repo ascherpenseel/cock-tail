@@ -38,6 +38,8 @@
 }
 
 .button {
+  text-align: center;
+  line-height: 45px;
   width: 80px;
   background-color: black;
   color: $theme-color;
@@ -47,11 +49,12 @@
 
   .mini & {
     width: 50px;
+    line-height: 35px;
+    color: white;
   }
 
   &:hover {
-    background-color: $theme-color-dark;
-    border-color: $theme-color-dark;
+    background-color: $theme-color;
     color: black;
   }
   &:active {

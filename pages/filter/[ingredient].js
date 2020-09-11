@@ -1,13 +1,29 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react' 
+import styles from '../../styles/ListByIngredient.module.scss'
 
-export default function ListByLetter() {
+import Cover from '../../components/Cover'
+import Header from '../../components/Header'
+
+export default function ListByIngredient() {
     const router = useRouter()
     const { ingredient } = router.query
+
+    useEffect(() => {
+        window.scroll(0,window.innerHeight)
+    },[]) 
+
     return (
         <>
-            <Head><title>List of cocktails</title></Head>
-            <div>Alcohol: {ingredient}</div>
+            <Head><title>Cocktails with {ingredient}</title></Head>
+            <Cover />
+            <Header />
+            <div className={styles.container}>
+                <div className={`${styles.heading} font-script`}>
+                    Cocktails with: <div className={styles.underlined}>{ingredient}</div>
+                </div>
+            </div>
         </>
     )
 }

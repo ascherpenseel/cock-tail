@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import styles from '../../styles/ListByLetter.module.scss'
 
 import Cover from '../../components/Cover'
+import Header from '../../components/Header'
 import Keyboard from '../../components/Keyboard'
 
 export default function ListByLetter() {
@@ -12,6 +13,7 @@ export default function ListByLetter() {
         <>
             <Head><title>List of cocktails</title></Head>
             <Cover />
+            <Header />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={`${styles.heading} font-script`}>List of cocktails</div>

@@ -2,7 +2,7 @@ import styles from '../styles/Keyboard.module.scss'
 import Link from 'next/link'
 
 const Letter = (char, selected) => (
-    <Link scroll={false} href={`/list/${char}`}>
+    <Link key={char} scroll={false} href={`/list/${char}`}>
         <a className={`${styles.letter} ${char === selected ? styles.selected : ''}`}>
             {char}
         </a>

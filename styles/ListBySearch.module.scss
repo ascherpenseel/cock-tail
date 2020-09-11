@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.container {
+  min-height: 100vh;
+  padding: 30px;
+  padding-top: calc(80px + 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  font-size: $font-xl;
+  line-height: $font-lg;
+
+  .underlined {
+    border-bottom: 2px solid;
+    display: inline-block;
+  }
+}
