@@ -14,19 +14,19 @@ export default function ListByIngredient() {
     const { list, isLoading, isError } = getListByIngredient(ingredient)
 
     useEffect(() => {
-        window.scroll(0, window.innerHeight === window.scrollY ? window.innerHeight - 1 : window.innerHeight)
+        window.scroll(0, window.innerHeight)
     },[]) 
 
     return (
         <>
             <Head><title>Cocktails with {ingredient}</title></Head>
             <Cover />
-            <Header noSwitch/>
+            <Header noAlcoholicFilter/>
             <div className={styles.container}>
                 <div className={`${styles.heading} font-script`}>
                     Cocktails with: <div className={styles.underlined}>{ingredient}</div>
                 </div>
-                <List list={list} isLoading={isLoading} isError={isError} />
+                <List list={list} isLoading={isLoading} isError={isError} noAlcoholicFilter />
             </div>
         </>
     )

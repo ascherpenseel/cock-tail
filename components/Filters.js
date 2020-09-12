@@ -10,7 +10,7 @@ const Ingredient = ({ name }) => (
     </Link>
 )
 
-export default function Filters({ noSwitch }) {
+export default function Filters({ noAlcoholicFilter }) {
     const { ingredients, isLoading, isError } = getIngredients()
 
     if (isLoading) return <div className={styles.container}>Loading...</div>
@@ -20,7 +20,7 @@ export default function Filters({ noSwitch }) {
         <div className={styles.container}>
             <div className={styles.alcoholFree}>
                 {
-                    !noSwitch && <Switch label='Non-alcoholic'/>
+                    !noAlcoholicFilter && <Switch label='Non-alcoholic'/>
                 }
             </div>
             <div className={styles.filterIcon}>

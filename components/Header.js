@@ -4,7 +4,7 @@ import Search from './Search'
 import Filters from './Filters'
 import Link from 'next/link'
 
-export default function Header({ noSwitch }) {
+export default function Header({ noAlcoholicFilter }) {
 
     const [show, setShow] = useState(false)
 
@@ -18,6 +18,7 @@ export default function Header({ noSwitch }) {
 
     useEffect(() => {
         window.addEventListener('scroll', toggle)
+        toggle()
         return () => {
             window.removeEventListener('scroll', toggle)
         }
@@ -25,9 +26,9 @@ export default function Header({ noSwitch }) {
 
     return (
         <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
-            <Filters noSwitch={noSwitch}/>
+            <Filters noAlcoholicFilter={noAlcoholicFilter}/>
             <h1 className={`${styles.logo} font-script`}>
-                <Link scroll={false} href='/'>
+                <Link scroll={false} href='/list/a'>
                     <a>The Cock Tail</a>
                 </Link>
             </h1>

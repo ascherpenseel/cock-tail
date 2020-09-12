@@ -14,7 +14,7 @@ export default function ListByLetter() {
     const { list, isLoading, isError } = getListBySearch(word)
 
     useEffect(() => {
-        window.scroll(0, window.innerHeight === window.scrollY ? window.innerHeight - 1 : window.innerHeight)
+        window.scroll(0, window.innerHeight)
     },[word]) 
 
     return (

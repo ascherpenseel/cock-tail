@@ -6,11 +6,17 @@
     flex-direction: column;
     align-items: center;
     width: 150px;
+
+    &:hover > .thumb {
+        border: 15px solid #cedfa9;
+        transform: rotate(25deg);
+    }
 }
 
 .thumb {
     width: 100px;
     border-radius: 50px;
+    transition: all .2s ease;
 }
 
 .name {

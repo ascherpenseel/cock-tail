@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import styles from '../../styles/CocktailDetails.module.scss'
 
 import Cover from '../../components/Cover'
 import Header from '../../components/Header'
@@ -21,12 +23,18 @@ export default function CocktailDetails() {
         data = getCocktailById(router.query.id)
     }
 
+    useEffect(() => {
+        window.scroll(0, window.innerHeight)
+    },[]) 
+
     return (
         <>
-            <Head><title>Caca</title></Head>
+            <Head><title>{data.cocktail ? data.cocktail.strDrink : 'And your cocktail is ...'}</title></Head>
             <Cover />
-            <Header />
-            <Cocktail cocktail={data.cocktail} isLoading={data.isLoading} isError={data.isError} />
+            <Header noAlcoholicFilter />
+            <div className={styles.container}>
+                <Cocktail cocktail={data.cocktail} isLoading={data.isLoading} isError={data.isError} />
+            </div>
         </>
     )
 }
