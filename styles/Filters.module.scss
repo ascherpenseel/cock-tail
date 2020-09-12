@@ -10,12 +10,15 @@
     order: 1;
     flex: 1;
     align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
 }
 
 .filterIcon {
     position: relative;
-    top: 7px;
-    height: 65px;
+    top: 10px;
+    height: 60px;
     
     img {
         height: 40px;

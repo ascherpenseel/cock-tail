@@ -1,6 +1,8 @@
 import styles from '../styles/Filters.module.scss'
 import Link from 'next/link'
 
+import Switch from './Switch'
+
 const Ingredient = ({ name }) => (
     <Link scroll={false} href={`/filter/${name}`}>
         <a className={styles.ingredient}>{name}</a>
@@ -12,7 +14,9 @@ export default function Filters() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.alcoholFree}>Sin Alcohol</div>
+            <div className={styles.alcoholFree}>
+                <Switch label='Non-alcoholic'/>
+            </div>
             <div className={styles.filterIcon}>
                 <img src='../filtrar.svg'/>
             </div>

@@ -19,6 +19,7 @@ export default function Search({ mini }) {
     return (
         <div className={`${styles.container} ${mini ? styles.mini : ''}`}>
             <input  type='search' 
+                    name='keyword'
                     placeholder='Cocktail name' 
                     value={keyword} 
                     onChange={handleChange} 
