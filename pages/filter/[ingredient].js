@@ -5,10 +5,13 @@ import styles from '../../styles/ListByIngredient.module.scss'
 
 import Cover from '../../components/Cover'
 import Header from '../../components/Header'
+import List from '../../components/List'
+import { getListByIngredient } from '../../api/api'
 
 export default function ListByIngredient() {
     const router = useRouter()
     const { ingredient } = router.query
+    const { list, isLoading, isError } = getListByIngredient(ingredient)
 
     useEffect(() => {
         window.scroll(0, window.innerHeight === window.scrollY ? window.innerHeight - 1 : window.innerHeight)
@@ -18,11 +21,12 @@ export default function ListByIngredient() {
         <>
             <Head><title>Cocktails with {ingredient}</title></Head>
             <Cover />
-            <Header />
+            <Header noSwitch/>
             <div className={styles.container}>
                 <div className={`${styles.heading} font-script`}>
                     Cocktails with: <div className={styles.underlined}>{ingredient}</div>
                 </div>
+                <List list={list} isLoading={isLoading} isError={isError} />
             </div>
         </>
     )

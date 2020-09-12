@@ -4,7 +4,7 @@ import Search from './Search'
 import Filters from './Filters'
 import Link from 'next/link'
 
-export default function Header() {
+export default function Header({ noSwitch }) {
 
     const [show, setShow] = useState(false)
 
@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
-            <Filters />
+            <Filters noSwitch={noSwitch}/>
             <h1 className={`${styles.logo} font-script`}>
                 <Link scroll={false} href='/'>
                     <a>The Cock Tail</a>
