@@ -12,7 +12,7 @@ export default function ListItem({ cocktail }) {
     }
 
     return (
-        <Link href={{ pathname: '/cocktail/[id]', query: { data: JSON.stringify(cocktail) } }} as={`/cocktail/${cocktail.idDrink}`}>
+        <Link scroll={false} href={{ pathname: '/cocktail/[id]', query: { data: JSON.stringify(cocktail) } }} as={`/cocktail/${cocktail.idDrink}`}>
             <a className={styles.container}>
                 <img className={styles.thumb} src={thumb} />
                 <p className={styles.name}>{cocktail.strDrink}</p>

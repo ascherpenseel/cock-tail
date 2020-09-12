@@ -16,7 +16,7 @@ export default function CocktailDetails() {
         isError: false
     }
 
-    if (router.query.data) {
+    if (router.query.data && router.query.data.strCategory) {
         data.cocktail = JSON.parse(router.query.data)
     }
     else {
