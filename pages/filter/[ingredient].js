@@ -17,7 +17,7 @@ export default function ListByIngredient() {
     return (
         <>
             <Head><title>Cocktails with {ingredient}</title></Head>
-            <Layout listData={listData} noAlcoholicFilter>
+            <Layout listData={listData} noAlcoholicFilter={true}>
                 <div className={`${styles.heading} font-script`}>
                     Cocktails with: <div className={styles.underlined}>{ingredient}</div>
                 </div>

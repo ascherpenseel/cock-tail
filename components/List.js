@@ -2,6 +2,7 @@ import styles from '../styles/List.module.scss'
 import { useContext } from 'react'
 import { AppContext } from '../context/context'
 import ListItem from './ListItem'
+import Transition from './Transition'
 
 export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
     
@@ -16,7 +17,11 @@ export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
     return (
         <div className={styles.container}>
         {
-            filteredList.map(item => <ListItem key={item.idDrink} cocktail={item} />)
+            filteredList.map(item => 
+                <Transition key={item.idDrink} effect='scaleUp'>
+                    <ListItem cocktail={item} />
+                </Transition>
+            )
         }
         </div>
     )
