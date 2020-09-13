@@ -2,16 +2,13 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react' 
 import styles from '../../styles/ListBySearch.module.scss'
-
-import Cover from '../../components/Cover'
-import Header from '../../components/Header'
-import List from '../../components/List'
 import { getListBySearch } from '../../api/api'
+import Layout from '../../components/Layout'
 
 export default function ListByLetter() {
     const router = useRouter()
     const { word } = router.query
-    const { list, isLoading, isError } = getListBySearch(word)
+    const listData = getListBySearch(word)
 
     useEffect(() => {
         window.scroll(0, window.innerHeight)
@@ -20,14 +17,11 @@ export default function ListByLetter() {
     return (
         <>
             <Head><title>{word} cocktails</title></Head>
-            <Cover />
-            <Header />
-            <div className={styles.container}>
+            <Layout listData={listData}>
                 <div className={`${styles.heading} font-script`}>
                     Search results for: <div className={styles.underlined}>{word}</div>
                 </div>
-                <List list={list} isLoading={isLoading} isError={isError} />
-            </div>
+            </Layout>
         </>
     )
 }

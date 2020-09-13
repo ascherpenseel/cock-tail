@@ -1,31 +1,25 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../../styles/ListByLetter.module.scss'
-
-import Cover from '../../components/Cover'
-import Header from '../../components/Header'
 import Keyboard from '../../components/Keyboard'
-import List from '../../components/List'
 import { getListByLetter } from '../../api/api'
+import Layout from '../../components/Layout'
 
 export default function ListByLetter() {
     const router = useRouter()
     const { letter } = router.query
-    const { list, isLoading, isError } = getListByLetter(letter)
+    const listData = getListByLetter(letter)
 
     return (
         <>
             <Head><title>List of cocktails</title></Head>
-            <Cover />
-            <Header />
-            <div className={styles.container}>
+            <Layout listData={listData}>
                 <div className={styles.header}>
                     <div className={`${styles.heading} font-script`}>List of cocktails</div>
                     <Keyboard letter={letter} />
                     <div className={`${styles.heading} ${styles.underlined} font-script`}>by first letter</div>
                 </div>
-                <List list={list} isLoading={isLoading} isError={isError} />
-            </div>
+            </Layout>
         </>
     )
 }
