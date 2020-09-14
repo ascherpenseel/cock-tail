@@ -61,3 +61,19 @@
     top: 2px;
   }
 }
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input, .button {
+    width: 100%;
+  }
+
+  .input {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}

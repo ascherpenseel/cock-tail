@@ -17,3 +17,10 @@
     border-bottom: 2px solid;
   }
 }
+
+@media (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}

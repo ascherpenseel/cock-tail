@@ -33,3 +33,41 @@
   line-height: 90px;
   margin: 0;
 }
+
+@media (max-width: 1100px) {
+  .content {
+    flex: 1.2;
+  }
+  .img {
+    flex: 0.8;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .img, .content {
+    align-items: center;
+  }
+
+  .img {
+    padding-top: 0;
+  }
+
+  .content {
+    margin-bottom: 30px;
+
+    .title {
+      font-size: 4em;
+      text-align: center;
+      transform: translateX(-0.15em);
+    }
+
+    p {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+}
