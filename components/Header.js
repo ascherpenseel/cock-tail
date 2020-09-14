@@ -24,9 +24,21 @@ export default function Header({ noAlcoholicFilter }) {
         }
     }, [])
 
+    if (typeof window !== "undefined" && window.innerWidth <= 500) return (
+        <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
+            {/* <Filters noAlcoholicFilter={noAlcoholicFilter} /> */}
+            <h1 className={`${styles.logo} font-script`}>
+                <Link scroll={false} href='/list/a'>
+                    <a>The Cock Tail</a>
+                </Link>
+            </h1>
+            <Search mini />
+        </div>
+    )
+
     return (
         <div className={`${styles.container} ${show ? '' : styles.hidden}`}>
-            <Filters noAlcoholicFilter={noAlcoholicFilter}/>
+            <Filters noAlcoholicFilter={noAlcoholicFilter} />
             <h1 className={`${styles.logo} font-script`}>
                 <Link scroll={false} href='/list/a'>
                     <a>The Cock Tail</a>
