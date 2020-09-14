@@ -8,6 +8,7 @@ export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
     
     if (isLoading) return <div className={`${styles.isLoading} ${styles.container}`}>Loading...</div>
     if (isError) return <div className={`${styles.isError} ${styles.container}`}>Error loading the data</div>
+    if (!list) return <div className={`${styles.isError} ${styles.container}`}>No cocktails found in this category :(</div>
 
     const { nonAlcoholic } = useContext(AppContext)
     let filteredList = (nonAlcoholic && !noAlcoholicFilter) ? list.filter(drink => drink.strAlcoholic === 'Non alcoholic') : list
