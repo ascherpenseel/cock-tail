@@ -92,11 +92,11 @@
     flex: 0;
   }
 
-  .container:hover .filterIcon > img {
+  .container.open .filterIcon > img {
     transform: rotate(180deg);
   }
 
-  .listWrapper.open {
+  .container.open .listWrapper {
     opacity: 1;
     max-height: 100vh;
     pointer-events: all;

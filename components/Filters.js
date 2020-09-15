@@ -27,12 +27,12 @@ export default function Filters({ noAlcoholicFilter }) {
     if (isError) return <div className={styles.container}>Error</div>
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${open ? styles.open : ''}`}>
             {!isMobile && <AlcoholicFilter />}
             <div className={styles.filterIcon} onClick={toggle}>
                 <img src='../filtrar.svg' />
             </div>
-            <div className={`${styles.listWrapper} ${open ? styles.open : ''}`}>
+            <div className={`${styles.listWrapper}`}>
                 {isMobile && !noAlcoholicFilter && <><p>Filter non-alcoholic drinks</p><AlcoholicFilter /></>}
                 <p>See cocktails by ingredient</p>
                 <ul className={`${styles.list}`}>
