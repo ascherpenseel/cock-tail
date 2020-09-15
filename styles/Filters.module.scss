@@ -74,15 +74,17 @@
   }
 }
 
-.filterIcon:hover + .listWrapper,
-.listWrapper:hover {
-  opacity: 1;
-  max-height: 100vh;
-  pointer-events: all;
-}
+@media (min-width: 651px) {
+  .container:hover .alcoholFree:not(:hover) + .filterIcon > img {
+    transform: rotate(180deg);
+  }
 
-.container:hover .alcoholFree:not(:hover) + .filterIcon > img {
-  transform: rotate(180deg);
+  .filterIcon:hover + .listWrapper,
+  .listWrapper:hover {
+    opacity: 1;
+    max-height: 100vh;
+    pointer-events: all;
+  }
 }
 
 @media (max-width: 650px) {
@@ -92,5 +94,11 @@
 
   .container:hover .filterIcon > img {
     transform: rotate(180deg);
+  }
+
+  .listWrapper.open {
+    opacity: 1;
+    max-height: 100vh;
+    pointer-events: all;
   }
 }
