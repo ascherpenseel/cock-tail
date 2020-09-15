@@ -4,10 +4,10 @@
   width: 100%;
   text-align: center;
   font-size: $font-xl;
-  line-height: $font-lg;
 
   .underlined {
     border-bottom: 2px solid;
     display: inline-block;
+    line-height: $font-lg;
   }
 }

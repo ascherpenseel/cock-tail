@@ -27,6 +27,7 @@ p {
 .font-script {
   font-family: "Mrs Saint Delafield", cursive;
   font-weight: 100;
+  line-height: $font-lg;
 }
 
 .text-md {
@@ -36,4 +37,10 @@ p {
 
 .underlined {
   text-decoration: underline;
+}
+
+@media (max-width: 650px) {
+  .font-script {
+    line-height: 1em;
+  }
 }

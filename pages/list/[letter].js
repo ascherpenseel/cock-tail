@@ -16,7 +16,7 @@ export default function ListByLetter() {
             <Layout listData={listData}>
                 <div className={styles.header}>
                     <div className={`${styles.heading} font-script`}>List of cocktails</div>
-                    {/* <Keyboard letter={letter} /> */}
+                    <Keyboard letter={letter} />
                     <div className={`${styles.heading} ${styles.underlined} font-script`}>by first letter</div>
                 </div>
             </Layout>

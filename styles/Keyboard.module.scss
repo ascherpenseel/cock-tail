@@ -37,3 +37,10 @@
     color: black;
   }
 }
+
+@media (max-width: 650px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
