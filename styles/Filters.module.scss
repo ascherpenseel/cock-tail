@@ -1,73 +1,96 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
 .alcoholFree {
-    order: 1;
-    flex: 1;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
+  order: 1;
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
 }
 
 .filterIcon {
-    position: relative;
-    top: 10px;
-    height: 60px;
-    
-    img {
-        height: 40px;
-        transition: all .3s ease;
-    }
+  position: relative;
+  top: 10px;
+  height: 60px;
+
+  img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
 }
 
 .listWrapper {
-    position: absolute;
-    opacity: 0;
-    top: 80px;
-    left: 0px;
-    width: 100%;
-    padding: 0px;
-    background-color: $theme-color-dark;
-    transition: all 0.3s ease;
-    max-height: 0;
-    overflow: hidden;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  opacity: 0;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  padding: 30px;
+  background-color: $theme-color-dark;
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+
+  > div {
+    padding-left: 0;
+  }
+  > p:first-child {
+    margin-top: 0;
+  }
+  > div + p {
+    margin-top: 30px;
+  }
 }
 
 .list {
-    list-style: none;
-    padding: 30px;
-    margin: 0;
-    display: flex;
-    flex-flow: row wrap;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .ingredient {
-    font-size: $font-sm;
-    padding: 5px 10px;
-    background-color: transparent;
-    border: 1px solid;
-    border-radius: $font-md;
-    margin: 2px;
-    cursor: pointer;
-    text-transform: capitalize;
+  font-size: $font-sm;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: $font-md;
+  margin: 2px;
+  cursor: pointer;
+  text-transform: capitalize;
 
-    &:hover {
-        background-color: $theme-color;
-    }
+  &:hover {
+    background-color: $theme-color;
+  }
 }
 
-.filterIcon:hover + .listWrapper, .listWrapper:hover {
-    opacity: 1;
-    max-height: 100vh;
+.filterIcon:hover + .listWrapper,
+.listWrapper:hover {
+  opacity: 1;
+  max-height: 100vh;
+  pointer-events: all;
 }
 
 .container:hover .alcoholFree:not(:hover) + .filterIcon > img {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 650px) {
+  .container {
+    flex: 0;
+  }
+
+  .container:hover .filterIcon > img {
     transform: rotate(180deg);
+  }
 }

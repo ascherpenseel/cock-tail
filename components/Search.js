@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useResponsive } from '../utils/utils'
@@ -10,7 +10,7 @@ export default function Search({ mini }) {
     const [keyword, setKeyword] = useState('')
     const router = useRouter()
     const isMobile = useResponsive()
-    const [collapsed, setCollapsed] = useState(isMobile)
+    const [collapsed, setCollapsed] = useState(null)
 
     const handleChange = (e) => {
         setKeyword(e.target.value)
@@ -25,12 +25,16 @@ export default function Search({ mini }) {
         else router.push(`/search/${keyword}`)
     }
 
+    useEffect(() => {
+        setCollapsed(isMobile)
+    }, [isMobile])
+
     return (
         <div className={`
             ${styles.container}
             ${mini ? styles.mini : ''}
-            ${collapsed ? styles.collapsed : ''}`}>
-
+            ${collapsed ? styles.collapsed : ''}
+        `}>
             <input type='search'
                 name='keyword'
                 placeholder='Cocktail name'

@@ -85,12 +85,13 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .container.mini {
     position: absolute;
     right: 20px;
     width: calc(100% - 35px);
     transition: all 0.3s;
+    background-color: white;
 
     &.collapsed {
       width: 35px !important;
@@ -99,7 +100,6 @@
 
     .input {
       width: 100%;
-      background-color: white;
     }
   }
 }
