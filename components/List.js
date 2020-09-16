@@ -18,7 +18,7 @@ export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
     return (
         <div className={styles.container}>
         {
-            filteredList.map(item => 
+            filteredList.sort((a,b) => (a.strDrink > b.strDrink) ? 1 : ((b.strDrink > a.strDrink) ? -1 : 0)).map(item => 
                 <Transition key={item.idDrink} effect='scaleUp'>
                     <ListItem cocktail={item} />
                 </Transition>
