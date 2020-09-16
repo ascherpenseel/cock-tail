@@ -12,6 +12,8 @@ export default function Switch({ label }) {
             <div
                 className={`${styles.container} ${nonAlcoholic ? styles.active : ''}`}
                 onClick={toggle}
+                data-testid-active={nonAlcoholic ? 'yes' : 'no'}
+                data-testid='link'
             >
                 <div className={styles.switch}></div>
             </div>

@@ -15,8 +15,8 @@ export default function ListItem({ cocktail }) {
         <Link scroll={false} href={{ pathname: '/cocktail/[id]', query: { data: JSON.stringify(cocktail) } }} as={`/cocktail/${cocktail.idDrink}`}>
             <a className={styles.container}>
                 <img className={styles.thumb} src={thumb} />
-                <p className={styles.name}>{cocktail.strDrink}</p>
-                <p className={styles.ingredients}>{ingredients.join(', ')}</p>
+                <p className={styles.name} data-testid="name">{cocktail.strDrink}</p>
+                <p className={styles.ingredients} data-testid="ingredients">{ingredients.join(', ')}</p>
             </a>
         </Link>
     )
