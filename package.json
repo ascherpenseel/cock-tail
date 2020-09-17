@@ -13,7 +13,9 @@
   "dependencies": {
     "framer-motion": "^2.6.13",
     "next": "9.5.3",
+    "proxy-polyfill": "^0.3.2",
     "react": "16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "16.13.1",
     "sass": "^1.26.10",
     "swr": "^0.3.2"
