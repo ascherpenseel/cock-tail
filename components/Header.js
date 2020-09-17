@@ -4,7 +4,7 @@ import Search from './Search'
 import Filters from './Filters'
 import Link from 'next/link'
 
-export default function Header({ noAlcoholicFilter }) {
+function Header({ noAlcoholicFilter }) {
 
     const [show, setShow] = useState(false)
 
@@ -36,3 +36,5 @@ export default function Header({ noAlcoholicFilter }) {
         </div>
     )
 }
+
+export default React.memo(Header)

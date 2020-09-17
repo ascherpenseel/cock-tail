@@ -4,7 +4,7 @@ import { AppContext } from '../context/context'
 import ListItem from './ListItem'
 import Transition from './Transition'
 
-export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
+function List({ list, isLoading, isError, noAlcoholicFilter }) {
     
     if (isLoading) return <div className={`${styles.isLoading} ${styles.container}`} data-testid='loading'>Loading...</div>
     if (isError) return <div className={`${styles.isError} ${styles.container}`} data-testid='error'>Error loading the data</div>
@@ -27,3 +27,5 @@ export default function List({ list, isLoading, isError, noAlcoholicFilter }) {
         </div>
     )
 }
+
+export default React.memo(List)

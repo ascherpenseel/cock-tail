@@ -11,7 +11,7 @@ const Ingredient = ({ name }) => (
     </Link>
 )
 
-export default function Filters({ noAlcoholicFilter }) {
+function Filters({ noAlcoholicFilter }) {
     const { ingredients, isLoading, isError } = getIngredients()
     const isMobile = useResponsive()
     const [open, setOpen] = useState(false)
@@ -44,3 +44,5 @@ export default function Filters({ noAlcoholicFilter }) {
         </div>
     )
 }
+
+export default React.memo(Filters)

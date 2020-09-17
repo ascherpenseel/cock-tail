@@ -6,7 +6,7 @@ import styles from '../styles/Search.module.scss'
 
 const searchIcon = '../search.svg'
 
-export default function Search({ mini }) {
+function Search({ mini }) {
     const [keyword, setKeyword] = useState('')
     const router = useRouter()
     const isMobile = useResponsive()
@@ -54,3 +54,5 @@ export default function Search({ mini }) {
         </div>
     )
 }
+
+export default React.memo(Search)

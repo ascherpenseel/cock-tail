@@ -1,7 +1,7 @@
 import styles from '../styles/ListItem.module.scss'
 import Link from 'next/link'
 
-export default function ListItem({ cocktail }) {
+function ListItem({ cocktail }) {
     const thumb = cocktail.strDrinkThumb + '/preview'
     const ingredients = []
     
@@ -21,3 +21,5 @@ export default function ListItem({ cocktail }) {
         </Link>
     )
 }
+
+export default React.memo(ListItem)
