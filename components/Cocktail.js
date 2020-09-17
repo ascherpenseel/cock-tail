@@ -2,8 +2,8 @@ import styles from '../styles/Cocktail.module.scss'
 
 export default function Cocktail({ cocktail, isLoading, isError }) {
     
-    if (isLoading) return <div className={`${styles.isLoading} ${styles.container}`}>Loading...</div>
-    if (isError) return <div className={`${styles.isError} ${styles.container}`}>Error loading the data</div>
+    if (isLoading) return <div className={`${styles.isLoading} ${styles.container}`} data-testid='loading'>Loading...</div>
+    if (isError) return <div className={`${styles.isError} ${styles.container}`} data-testid='error'>Error loading the data</div>
 
     const ingredients = [], measures = []
     
@@ -18,18 +18,18 @@ export default function Cocktail({ cocktail, isLoading, isError }) {
         <div className={styles.container}>
             <img className={styles.img} src={cocktail.strDrinkThumb} />
             <div className={styles.details}>
-                <h1 className={`${styles.title} font-script`}>
+                <h1 className={`${styles.title} font-script`} data-testid='name'>
                     {cocktail.strDrink}
                 </h1>
                 <div className={styles.features}>
                     <span className={styles.label}>Category</span>
-                    <span>{cocktail.strCategory ? cocktail.strCategory : '-'}</span>
+                    <span data-testid='category'>{cocktail.strCategory ? cocktail.strCategory : '-'}</span>
                     <span className={styles.label}>Alcoholic</span>
-                    <span>{cocktail.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</span>
+                    <span data-testid='alcoholic'>{cocktail.strAlcoholic === 'Alcoholic' ? 'Yes' : 'No'}</span>
                     <span className={styles.label}>Glass</span>
-                    <span>{cocktail.strGlass ? cocktail.strGlass : '-'}</span>
+                    <span data-testid='glass'>{cocktail.strGlass ? cocktail.strGlass : '-'}</span>
                 </div>
-                <div className={styles.ingredients}>
+                <div className={styles.ingredients} data-testid='ingredients'>
                     {
                         ingredients.map((ingredient, index) => (
                             <React.Fragment key={index}>
@@ -39,7 +39,7 @@ export default function Cocktail({ cocktail, isLoading, isError }) {
                         ))
                     }
                 </div>
-                <div className={styles.instructions}>
+                <div className={styles.instructions} data-testid='instructions'>
                     {cocktail.strInstructions}
                 </div>
             </div>

@@ -20,22 +20,22 @@ export default function Filters({ noAlcoholicFilter }) {
 
     const AlcoholicFilter = () =>
         (<div className={styles.alcoholFree}>
-            {!noAlcoholicFilter && <Switch label='Non-alcoholic' />}
+            <Switch label='Non-alcoholic'/>
         </div>)
 
-    if (isLoading) return <div className={styles.container}>Loading...</div>
-    if (isError) return <div className={styles.container}>Error</div>
+    if (isLoading) return <div className={styles.container} data-testid='loading'>Loading...</div>
+    if (isError) return <div className={styles.container} data-testid='error'>Error</div>
 
     return (
         <div className={`${styles.container} ${open ? styles.open : ''}`}>
-            {!isMobile && <AlcoholicFilter />}
+            {!isMobile && !noAlcoholicFilter && <AlcoholicFilter data-testid='switch'/>}
             <div className={styles.filterIcon} onClick={toggle}>
                 <img src='../filtrar.svg' />
             </div>
             <div className={`${styles.listWrapper}`}>
                 {isMobile && !noAlcoholicFilter && <><p>Filter non-alcoholic drinks</p><AlcoholicFilter /></>}
                 <p>See cocktails by ingredient</p>
-                <ul className={`${styles.list}`}>
+                <ul className={`${styles.list}`} data-testid='list'>
                     {
                         ingredients.map((ingredient, index) => <Ingredient key={index} name={ingredient.strIngredient1} />)
                     }

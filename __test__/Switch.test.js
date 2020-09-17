@@ -11,6 +11,8 @@ describe("Switch", () => {
         const link = wrapper.find("[data-testid='link']")
         link.simulate('click')
         expect(nonAlcoholic).toBe(true)
+        link.simulate('click')
+        expect(nonAlcoholic).toBe(false)
     })
 
 })
